@@ -89,6 +89,7 @@ def cs_compute_results(model, classes=None, train_data=None, valid_data=None, te
     y_tmp = test_data[1]    
     loss_test = model.evaluate(X_tmp, y_tmp, verbose=0)
     if classes == 1:
+        y_preds_test = model.predict(X_tmp)
         rmse_test = np.sqrt(loss_test)
     elif classes == 2:
         y_preds_test = model.predict(X_tmp)
@@ -115,7 +116,7 @@ def cs_compute_results(model, classes=None, train_data=None, valid_data=None, te
         print("FINAL VAL_AUC: %.3f"%(auc_valid))
         print("FINAL TST_AUC: %.3f"%(auc_test))
         df_out.loc[len(df_out)] = [loss_train, loss_valid, loss_test, auc_train, auc_valid, auc_test]
-
+    return y_preds_test
 
 # In[ ]:
 
