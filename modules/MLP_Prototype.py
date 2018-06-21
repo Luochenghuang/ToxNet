@@ -119,7 +119,7 @@ elif datarep == "image":
 # In[12]:
 
 
-def f_nn():
+def f_nn(train_default=True):
 
     # Define counter for hyperparam iterations
     global run_counter
@@ -201,20 +201,21 @@ def f_nn():
                      CSVLogger(filecsv)]
         
         # Train model
-        if datarep == "image":
-            datagen = ImageDataGenerator(rotation_range=180, fill_mode='constant', cval=0.)
-            hist = model.fit_generator(datagen.flow(X_train, y_train, batch_size=batch_size),
-                                       epochs=nb_epoch, steps_per_epoch=X_train.shape[0]/batch_size,
-                                       verbose=verbose,
-                                       validation_data=(X_valid, y_valid),
-                                       callbacks=callbacks)
-        else:
-            hist = model.fit(x=X_train, y=y_train,
-                             batch_size=batch_size,
-                             epochs=nb_epoch,
-                             verbose=verbose,
-                             validation_data=(X_valid, y_valid),
-                             callbacks=callbacks)
+        if train_default:
+            if datarep == "image":
+                datagen = ImageDataGenerator(rotation_range=180, fill_mode='constant', cval=0.)
+                hist = model.fit_generator(datagen.flow(X_train, y_train, batch_size=batch_size),
+                                           epochs=nb_epoch, steps_per_epoch=X_train.shape[0]/batch_size,
+                                           verbose=verbose,
+                                           validation_data=(X_valid, y_valid),
+                                           callbacks=callbacks)
+            else:
+                hist = model.fit(x=X_train, y=y_train,
+                                 batch_size=batch_size,
+                                 epochs=nb_epoch,
+                                 verbose=verbose,
+                                 validation_data=(X_valid, y_valid),
+                                 callbacks=callbacks)
 
         # Visualize loss curve
         hist_df = cs_keras_to_seaborn(hist)
@@ -303,6 +304,7 @@ prototype = True
 
 # In[15]:
 
-
-f_nn()
+# if train_default is true, models will be trained.
+# otherwise, the model will read saved weight from file.
+f_nn(True)
 
