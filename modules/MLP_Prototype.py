@@ -223,7 +223,7 @@ def f_nn(train_default=True):
         
         # Reload best model & compute results
         model.load_weights(filecp)
-        cs_compute_results(model, classes=y_class, df_out=cv_results,
+        y_preds_result = cs_compute_results(model, classes=y_class, df_out=cv_results,
                            train_data=(X_train,y_train),
                            valid_data=(X_valid,y_valid),
                            test_data=(X_test,y_test))
@@ -232,6 +232,11 @@ def f_nn(train_default=True):
     final_mean = cv_results.mean(axis=0)
     final_std = cv_results.std(axis=0)
     cv_results.to_csv('results.csv', index=False)
+
+    # ouput prediction of testset
+    with open("predictions_"+jobname+"_"+taskname+".csv", "w") as output:
+        writer = csv.writer(output, lineterminator='\n')
+        writer.writerows(y_preds_result)
     
     # Print final results
     print('*** TRIAL RESULTS: '+str(run_counter))
