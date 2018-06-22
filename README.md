@@ -4,35 +4,48 @@ ToxNet is a data science group from DIRECT program at the University of Washingt
 
 ---
 
+### Description of Models
 
-### Markdown
+#### MLP
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### RNN
 
-```markdown
-Syntax highlighted code block
+#### CNN
 
-# Header 1
-## Header 2
-### Header 3
+---
 
-- Bulleted
-- List
+### Files Setup
+* The functions are in chem_scripts folder.
+* The modules folder provides all the executable files. `MLP_Prototype.py` includes code for training, prediction and recording results. The rest of `.py` files are for data cleaning and data extraction.
+* The data directory records all the useful data.
 
-1. Numbered
-2. List
+---
 
-**Bold** and _Italic_ and `Code` text
+### Dependencies
 
-[Link](url) and ![Image](src)
-```
+* numpy
+* pandas
+* seaborn
+* sklearn
+* tensorflow (GPU backend)
+    _You need to install CUDA (>= 7.0, version 9 recommended) and cuDNN (>=v3, version 7 recommended)_
+* keras
+* RDKit
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+---
 
-### Jekyll Themes
+### Installation
+* pip install numpy
+* pip install pandas
+* pip install seaborn
+* pip install -U scikit-learn
+* pip install tensorflow-gpu
+    _follow instructions in tensorflow website to install CUDA and cuDNN (https://www.tensorflow.org/install/install_sources)_
+* pip install keras
+* pip install rdkit
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Luochenghuang/ToxNet/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+---
 
-### Support or Contact
+### Acknowledgments
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+....
