@@ -40,18 +40,24 @@ datarep = "image"          ## Specify data representation
 # Specify dataset name
 jobname = "tox_niehs"
 
+# Specify network type
+network_name = ""
+
 # Specify location of data
 homedir = os.path.dirname(os.path.realpath('__file__'))+"/data/"
 
 if datarep == "image":
+    network_name = "cnn"
     archdir = os.path.dirname(os.path.realpath('__file__'))+"/data/archive/"
     K.set_image_dim_ordering('tf')
     pixel = 80
     num_channel = 4
     channel = "engA"
 elif datarep == "tabular":
+    network_name = "mlp"
     archdir = os.path.dirname(os.path.realpath('__file__'))+"/data/"
 elif datarep == "text":
+    network_name = "rnn"
     archdir = os.path.dirname(os.path.realpath('__file__'))+"/data/"
 
 
@@ -187,13 +193,13 @@ def f_nn(train_default=True):
             print(model.summary())
             # Save model
             model_json = submodel.to_json()
-            filemodel=jobname+"_"+taskname+"_architecture_"+str(run_counter)+".json"
+            filemodel=jobname+"_"+network_name+"_"+taskname+"_architecture_"+str(run_counter)+".json"
             with open(filemodel, "w") as json_file:
                 json_file.write(model_json)
 
         # Setup callbacks
-        filecp = jobname+"_"+taskname+"_bestweights_trial_"+str(run_counter)+"_"+str(i)+".hdf5"
-        filecsv = jobname+"_"+taskname+"_loss_curve_"+str(run_counter)+"_"+str(i)+".csv"
+        filecp = jobname+"_"+network_name+"_"+taskname+"_bestweights_trial_"+str(run_counter)+"_"+str(i)+".hdf5"
+        filecsv = jobname+"_"+network_name+"_"+taskname+"_loss_curve_"+str(run_counter)+"_"+str(i)+".csv"
         callbacks = [TerminateOnNaN(),
                      LambdaCallback(on_epoch_end=lambda epoch,logs: sys.stdout.flush()),
                      EarlyStopping(monitor='val_loss', patience=25, verbose=1, mode='auto'),
@@ -231,10 +237,10 @@ def f_nn(train_default=True):
     # Calculate results for entire CV
     final_mean = cv_results.mean(axis=0)
     final_std = cv_results.std(axis=0)
-    cv_results.to_csv('results.csv', index=False)
+    cv_results.to_csv('results_'+jobname+'_'+network_name+"_"+taskname+'.csv', index=False)
 
     # ouput prediction of testset
-    with open("predictions_"+jobname+"_"+taskname+".csv", "w") as output:
+    with open("predictions_"+jobname+"_"+network_name+"_"+taskname+".csv", "w") as output:
         writer = csv.writer(output, lineterminator='\n')
         writer.writerows(y_preds_result)
     
