@@ -35,14 +35,14 @@ ToxNet is a data science group from DIRECT program at the University of Washingt
 ---
 
 ### Installation
-* pip install numpy
-* pip install pandas
-* pip install seaborn
-* pip install -U scikit-learn
-* pip install tensorflow-gpu
+$ pip install numpy==1.14.4
+$ pip install pandas==0.23.1
+$ pip install seaborn==0.8.1
+$ pip install -U scikit-learn==0.19.1
+$ pip install tensorflow-gpu==1.8.0
     * _follow instructions in tensorflow website to install CUDA and cuDNN (https://www.tensorflow.org/install/install_sources)_
-* pip install keras
-* pip install rdkit
+$ pip install Keras==2.2.0
+$ conda create -c rdkit -n my-rdkit-env rdkit (version 2017.09.1)
 
 ---
 
