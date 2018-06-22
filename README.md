@@ -28,7 +28,7 @@ ToxNet is a data science group from DIRECT program at the University of Washingt
 * seaborn
 * sklearn
 * tensorflow (GPU backend)
-    _You need to install CUDA (>= 7.0, version 9 recommended) and cuDNN (>=v3, version 7 recommended)_
+    * _You need to install CUDA (>= 7.0, version 9 recommended) and cuDNN (>=v3, version 7 recommended)_
 * keras
 * RDKit
 
@@ -40,7 +40,7 @@ ToxNet is a data science group from DIRECT program at the University of Washingt
 * pip install seaborn
 * pip install -U scikit-learn
 * pip install tensorflow-gpu
-    _follow instructions in tensorflow website to install CUDA and cuDNN (https://www.tensorflow.org/install/install_sources)_
+    * _follow instructions in tensorflow website to install CUDA and cuDNN (https://www.tensorflow.org/install/install_sources)_
 * pip install keras
 * pip install rdkit
 
