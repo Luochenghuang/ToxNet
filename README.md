@@ -1,37 +1,51 @@
-## Welcome to GitHub Pages
+# ToxNet
 
-You can use the [editor on GitHub](https://github.com/Luochenghuang/ToxNet/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+ToxNet is a data science group from DIRECT program at the University of Washington, which also collaborates with PNNL. The research is to predict the toxicity of various chemicals based on their structures. We utilize the published dataset from U.S Department of Health and Human Services' National Toxicology Program (https://ntp.niehs.nih.gov/pubhealth/evalatm/test-method-evaluations/acute-systemic-tox/models/index.html) and convert those tabular data into image and text file applying Open-Source Cheminformatics Software [RDKit] (http://www.rdkit.org). Furthermore, we fit these different format of data into three different neural networks: RNN (text), CNN (image) and MLP (tabular). Our primary goal is to analyze whether these models provide similar prediction and if there is a model that performs consistently better than others.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+---
 
-### Markdown
+### Description of Models
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### MLP
 
-```markdown
-Syntax highlighted code block
+#### RNN
 
-# Header 1
-## Header 2
-### Header 3
+#### CNN
 
-- Bulleted
-- List
+---
 
-1. Numbered
-2. List
+### Files Setup
+* The functions are in chem_scripts folder.
+* The modules folder provides all the executable files. `MLP_Prototype.py` includes code for training, prediction and recording results. The rest of `.py` files are for data cleaning and data extraction.
+* The data directory records all the useful data.
 
-**Bold** and _Italic_ and `Code` text
+---
 
-[Link](url) and ![Image](src)
-```
+### Dependencies
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+* numpy
+* pandas
+* seaborn
+* sklearn
+* tensorflow (GPU backend)
+    * _You need to install CUDA (>= 7.0, version 9 recommended) and cuDNN (>=v3, version 7 recommended)_
+* keras
+* RDKit
 
-### Jekyll Themes
+---
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Luochenghuang/ToxNet/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Installation
+* $ pip install numpy==1.14.4
+* $ pip install pandas==0.23.1
+* $ pip install seaborn==0.8.1
+* $ pip install -U scikit-learn==0.19.1
+* $ pip install tensorflow-gpu==1.8.0
+    * _follow instructions in tensorflow website to install CUDA and cuDNN (https://www.tensorflow.org/install/install_sources)_
+* $ pip install Keras==2.2.0
+* $ conda create -c rdkit -n my-rdkit-env rdkit (version 2017.09.1)
 
-### Support or Contact
+---
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Acknowledgments
+
+....
