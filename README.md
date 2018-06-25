@@ -13,6 +13,7 @@ Generally, multilayer perceptron (MLP) performs well to train the tabular form o
 <p align="center">
   <b>Table 1: Hyperparameter tunning result for MLP</b><br>
 </p>
+
 |               | dropout rate | number of layer | relu_type | Nodes | regulization | regulization value |
 | ------------- | ------------ | ----------------| ----------| ----- | ------------ | ------------------ |
 |    nontoxic   | 
