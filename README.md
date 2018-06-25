@@ -21,12 +21,12 @@ Generally, multilayer perceptron (MLP) performs well to train the tabular form o
 
 #### RNN
 
-|               | em_dim | relu_type | conv_units | reg_type | reg_value | num_layer | layer_units | val_AUC/RMSE | test_AUC/RMSE |
-| ------------- | ------------ | ----------------| ----------| ----- | ------------ | ------------------ |
-|    nontoxic   | 
-|    verytoxic  |
-|    GHS        |
-|    EPA        |
+|               |    em_dim    |     relu_type   | conv_units | reg_type | reg_value | num_layer | layer_units |
+| ------------- | ------------ | ----------------| ---------- | -------- | --------- | --------- | ----------- |
+|    nontoxic   | 7 | prelu | 64 | L2 | 4.5 | 2 | 64 |
+|    GHS        | 4 | prelu | 128 | L2 | 5 | 2 | 64 |
+|    verytoxic  | 2 | prelu | 64 | L2 | 5 | 2 | 64 |
+|    EPA        | 3 | leakyrelu | 64 | L2 | 3.5 | 2 | 64 |
 |    LD50       |
 
 #### CNN
