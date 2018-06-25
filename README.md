@@ -29,7 +29,7 @@ Generally, multilayer perceptron (MLP) performs well to train the tabular form o
 |    GHS        | 4 | prelu | 128 | L2 | 5 | 2 | 64 |
 |    verytoxic  | 2 | prelu | 64 | L2 | 5 | 2 | 64 |
 |    EPA        | 3 | leakyrelu | 64 | L2 | 3.5 | 2 | 64 |
-|    LD50       |
+|    LD50       | 4 | prelu | 64 | L2 | 5 | 2 | 32|
 
 #### CNN
 
