@@ -71,4 +71,4 @@ Generally, multilayer perceptron (MLP) performs well to train the tabular form o
 
 ### Acknowledgments
 
-Special thanks to Garrett Goh’s careful and patient guidance on our project and amazing support form  Pro. Jim Pfaendtner and Pro.Dave Beck.
+Special thanks to Garrett Goh’s careful and patient guidance on our project and amazing support form  Prof. Jim Pfaendtner and Prof.Dave Beck.
