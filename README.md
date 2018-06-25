@@ -8,6 +8,17 @@ ToxNet is a data science group from DIRECT program at the University of Washingt
 
 #### MLP
 
+Generally, multilayer perceptron (MLP) performs well to train the tabular form of data. We adopted this strategy for our project. In this network, we tuned the hyperparameters including dropout rate, number of layers, activation function (relu_type), number of nodes per layer, regulization type and regulization value.
+
+|               | dropout rate | number of layer | relu_type | Nodes | regulization | regulization value |
+| ------------- | ------------ | ----------------| ----------| ----- | ------------ | ------------------ |
+|    nontoxic   |              |                 |           |       |              |                    |
+|    verytoxic  |              |
+|    GHS        |              |
+|    EPA        |              |
+|    LD50       |              |
+
+
 #### RNN
 
 #### CNN
@@ -48,4 +59,4 @@ ToxNet is a data science group from DIRECT program at the University of Washingt
 
 ### Acknowledgments
 
-....
+Special thanks to Garrett Goh’s careful and patient guidance on our project and amazing support form  Pro. Jim Pfaendtner and Pro.Dave Beck.
