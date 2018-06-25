@@ -10,8 +10,8 @@ ToxNet is a data science group from DIRECT program at the University of Washingt
 
 Generally, multilayer perceptron (MLP) performs well to train the tabular form of data. We adopted this strategy for our project. In this network, we tuned the hyperparameters including dropout rate, number of layers, activation function (relu_type), number of nodes per layer, regulization type and regulization value.
 
-<center>Centered text!</center>
-
+<p align="center">
+  <b>Some Links:</b><br>
 ##### Table 1: Hyperparameter tunning result for MLP
 |               | dropout rate | number of layer | relu_type | Nodes | regulization | regulization value |
 | ------------- | ------------ | ----------------| ----------| ----- | ------------ | ------------------ |
