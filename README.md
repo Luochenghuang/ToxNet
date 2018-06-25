@@ -8,14 +8,14 @@ ToxNet is a data science group from DIRECT program at the University of Washingt
 
 #### MLP
 
-Generally, multilayer perceptron (MLP) performs well to train the tabular form of data. We adopted this strategy for our project. In this network, we tuned the hyperparameters including dropout rate, number of layers, activation function (relu_type), number of nodes per layer, regulization type and regulization value.
+Generally, multilayer perceptron (MLP) performs well to train the tabular form of data. We adopted this strategy for our project. In this network, we tuned the hyperparameters including dropout rate, number of layers (num_layer), activation function (relu_type), number of nodes per layer (layer_units), regulization type (reg_type) and regulization value (reg_value).
 
 <p align="center">
   <b>Table 1: Hyperparameter tunning result for MLP</b><br>
 </p>
 
-|               | dropout rate | number of layer | relu_type | Nodes | regulization | regulization value |
-| ------------- | ------------ | ----------------| ----------| ----- | ------------ | ------------------ |
+|               | dropout rate | num_layer | relu_type | layer_units | reg_type | reg_value |
+| ------------- | ------------ | --------- | ----------| ----------- | -------- | --------- |
 |    nontoxic   | 
 |    verytoxic  |
 |    GHS        |
@@ -24,7 +24,12 @@ Generally, multilayer perceptron (MLP) performs well to train the tabular form o
 
 #### RNN
 
-   ##### Table 2: Hyperparameter tunning result for RNN
+We use recurrent neural network (RNN) to train the text infomation in our project. In this case, we tuned the hyperparameters including embedding dimension (em_dim), activation function (relu_type), convolutional units (conv_units), number of layers (num_layer), number of nodes per layer (layer_units), regulization type (reg_type) and regulization value (reg_value).
+
+<p align="center">
+  <b>Table 2: Hyperparameter tunning result for RNN</b><br>
+</p>
+
 |               |    em_dim    |     relu_type   | conv_units | reg_type | reg_value | num_layer | layer_units |
 | ------------- | ------------ | ----------------| ---------- | -------- | --------- | --------- | ----------- |
 |    nontoxic   | 7 | prelu | 64 | L2 | 4.5 | 2 | 64 |
@@ -35,7 +40,7 @@ Generally, multilayer perceptron (MLP) performs well to train the tabular form o
 
 #### CNN
 
-
+Convolutional neural network (CNNN) is designed for image training. In this situation, we did not finish all the parameter tuning, instead, we use a empirical setting for the network (with 64 filters, 3 blocks and no dropout rate). The prediction result for CNN is not as good as MLP and RNN.
 
 ---
 
