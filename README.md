@@ -44,6 +44,30 @@ Convolutional neural network (CNNN) is designed for image training. In this situ
 
 ---
 
+### Data Visualization
+
+1. Accuracy Comparison
+
+![](https://github.com/Luochenghuang/ToxNet/blob/master/Poster/result_comparison.png)
+
+<p align="center">
+  <b>Fig 1. Accuracy Evaluation for All 5 Tasks</b><br>
+</p>
+
+NOTE: The left hand figure uses AUC to represent accuracy for all classification tasks and right-hand side RMSE is utilized for regression evaluation. In these figures, the MLP always performs better than other two networks. However, it may be misleading since we did not take all parameters into consideration.
+
+
+2. Indivdual Task Result
+
+
+![](https://github.com/Luochenghuang/ToxNet/blob/master/Poster/confusion_matrix.png) | ![](https://github.com/Luochenghuang/ToxNet/blob/master/Poster/log50_comparison.png)
+:----------------------------------------:|:------------------------------------------:
+Fig 2. Confusion Matrix for Classification Tasks | Fig 3. Regression Plot for Regression Task
+
+
+
+---
+
 ### Files Setup
 * The functions are in chem_scripts folder.
 * The modules folder provides all the executable files. `MLP_Prototype.py` includes code for training, prediction and recording results. The rest of `.py` files are for data cleaning and data extraction.
