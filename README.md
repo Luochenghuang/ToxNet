@@ -57,7 +57,7 @@ Convolutional neural network (CNNN) is designed for image training. In this situ
 NOTE: The left hand figure uses AUC to represent accuracy for all classification tasks and right-hand side RMSE is utilized for regression evaluation. In these figures, the MLP always performs better than other two networks. However, it may be misleading since we did not take all parameters into consideration.
 
 
-2. Indivdual Task Result
+2. Result for Indivdual Task
 
 
 ![](https://github.com/Luochenghuang/ToxNet/blob/master/Poster/confusion_matrix.png) | ![](https://github.com/Luochenghuang/ToxNet/blob/master/Poster/log50_comparison.png)
