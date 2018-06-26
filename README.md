@@ -16,7 +16,7 @@ Generally, multilayer perceptron (MLP) performs well to train the tabular form o
 
 |               | dropout rate | num_layer | relu_type | layer_units | reg_type | reg_value |
 | ------------- | ------------ | --------- | ----------| ----------- | -------- | --------- |
-|    nontoxic   | 
+|    nontoxic   | 0.5 | 2 | prelu | 256,32 | l2 | 2.5 |
 |    verytoxic  |
 |    GHS        |
 |    EPA        |
