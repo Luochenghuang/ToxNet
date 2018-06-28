@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, '../chem_scripts') # add file to be tested
+
 import pandas as pd
 import numpy as np
 from rdkit import Chem
