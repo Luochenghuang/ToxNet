@@ -65,6 +65,12 @@ NOTE: The left hand figure uses AUC to represent accuracy for all classification
 Fig 2. Confusion Matrix for Classification Tasks | Fig 3. Regression Plot for Regression Task
 
 
+3. User Interface
+
+Dash is a very powerful tool to build user interface. We build `app.py` file that allows user to input a formal SMILES structure and will return possibilities to classify its toxicity. Users can choose among 5 different standards but only MLP network will be loaded since it provides the most promising prediction.
+
+![](https://github.com/Luochenghuang/ToxNet/blob/master/Poster/dashDemo.gif)
+
 
 ---
 
