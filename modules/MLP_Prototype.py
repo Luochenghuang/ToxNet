@@ -2,12 +2,12 @@
 # coding: utf-8
 
 # In[5]:
-
+import sys
+sys.path.insert(0, '../chem_scripts') # add path to chem_scripts
 
 import os
 import numpy as np
 import pandas as pd
-import sys
 import csv
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import ModelCheckpoint, EarlyStopping, Callback, LearningRateScheduler, LambdaCallback
@@ -32,7 +32,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 taskname = "verytoxic"             ## Specify task to be predicted
 tasktype = "classification"  ## Specify either classification or regression
-datarep = "image"          ## Specify data representation
+datarep = "tabular"          ## Specify data representation
 
 
 # In[10]:

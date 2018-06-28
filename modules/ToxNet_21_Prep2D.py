@@ -2,7 +2,8 @@
 # coding: utf-8
 
 # In[1]:
-
+import sys
+sys.path.insert(0, '../chem_scripts') # add path to chem_scripts
 
 import pandas as pd
 import numpy as np

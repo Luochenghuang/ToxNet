@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, '../chem_scripts') # add path to chem_scripts
+
 import dash
 import os
 import csv
@@ -7,6 +10,7 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objs as go
 import base64
+
 from CalcDescriptorUser import compute_descriptors
 from rdkit import Chem
 from rdkit.Chem import Descriptors
