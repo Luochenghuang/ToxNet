@@ -93,3 +93,24 @@ def test_prep_symbols():
     assert type(total_lines) == int, 'total_lines type error,integar expected'
     
     return
+
+def test_cs_data_balance():
+    X, y = chem_scripts.cs_load_smiles('../data/tox_niehs_int_nontoxic_smiles.csv', smiles_cutoff=250)
+    balanced_indices = chem_scripts.cs_data_balance(y)
+    
+    assert type(balanced_indices) == np.ndarray, 'balanced_indices type error,np.ndarray expected'
+    assert balanced_indices.shape == (944,), "balanced_indices shape error, (944,) expected"
+    
+    return
+
+
+def test_cs_load_image():
+    X, y = chem_scripts.cs_load_image('../data/tox_niehs_int_nontoxic', channel= "engA")
+    
+    assert X.shape == (821, 25600), "X shape error,(821, 25600) expected"
+    assert type(X) == np.ndarray, 'X type error,np.ndarray expected'
+    
+    assert y.shape == (821,), "y shape error,(821,) expected"
+    assert type(y) == np.ndarray, 'y type error,np.ndarray expected'
+    
+    return
